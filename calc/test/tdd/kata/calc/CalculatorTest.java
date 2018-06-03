@@ -142,4 +142,10 @@ public class CalculatorTest {
         String numbers = "//[*][%][Q]\\n1*2%3*10Q11Q5%1009";
         assertEquals(Calculator.add(numbers), 32);
     }  
+    
+    @Test
+    public void testAddCustomDelimSquare() {
+        String numbers = "//[\n1[2[7";
+        assertEquals(Calculator.add(numbers), 10);
+    }
 }
