@@ -154,4 +154,10 @@ public class CalculatorTest {
         String numbers = "//[]\n1[]2[]7";
         assertEquals(Calculator.add(numbers), 10);
     }
+    
+    @Test
+    public void testAddMultipleLongCustomDelim() {
+        String numbers = "//[***][longerDelim][Q]\n1***2longerDelim3***10Q11Q5longerDelim1009";
+        assertEquals(Calculator.add(numbers), 32);
+    }      
 }
