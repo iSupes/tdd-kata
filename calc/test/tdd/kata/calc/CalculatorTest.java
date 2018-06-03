@@ -77,7 +77,7 @@ public class CalculatorTest {
     
     @Test
     public void testAddCustomDelim() {
-        String numbers = "//;1,2;7";
+        String numbers = "//;\n1;2;7";
         assertEquals(Calculator.add(numbers), 10);
     }
 }
