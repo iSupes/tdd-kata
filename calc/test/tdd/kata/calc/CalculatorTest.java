@@ -80,4 +80,16 @@ public class CalculatorTest {
         String numbers = "//;\n1;2;7";
         assertEquals(Calculator.add(numbers), 10);
     }
+    
+    @Test
+    public void testAdd1Negative() {
+        String numbers = "1,2,-4";
+        assertEquals(Calculator.add(numbers), -1);
+    }
+    
+    @Test
+    public void testAddManyNegative() {
+        String numbers = "1,2,-4,5,-7,-2";
+        assertEquals(Calculator.add(numbers), -1);
+    }
 }
