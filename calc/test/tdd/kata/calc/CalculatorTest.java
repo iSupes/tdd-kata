@@ -130,4 +130,16 @@ public class CalculatorTest {
         String numbers = "//longerDelim\n1longerDelim2longerDelim7";
         assertEquals(Calculator.add(numbers), 10);
     }  
+    
+    @Test
+    public void testAdd2CustomDelim() {
+        String numbers = "//[*][%]\\n1*2%3";
+        assertEquals(Calculator.add(numbers), 6);
+    }  
+    
+    @Test
+    public void testAddMultipleCustomDelim() {
+        String numbers = "//[*][%][Q]\\n1*2%3*10Q11Q5%1009";
+        assertEquals(Calculator.add(numbers), 32);
+    }  
 }
