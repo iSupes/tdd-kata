@@ -16,7 +16,6 @@ public class Calculator {
         }
         //Set the number delimiter
         String delim = ",";
-        
         //Checks if a custom delimiter has been specified and uses it if it has
         //Added additional code to allow variable length delimiters
         if(numbers.length() > 3 && numbers.substring(0,2).equals("//")){
@@ -28,6 +27,7 @@ public class Calculator {
             //Replaces new line characters with delimiters to allow '\n' to be used as a delimiter.
             numbers = numbers.replace("\n", delim);
         }
+        //It seems string tokenizers use regex by default, so no additional code was needed for the multiple custom delimiters
         StringTokenizer st = new StringTokenizer(numbers, delim);
         int total = 0;
         String negatives = "";
