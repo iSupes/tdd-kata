@@ -57,4 +57,10 @@ public class CalculatorTest {
         assertEquals(Calculator.add(numbers), 3);
     }
     
+    @Test
+    public void testAddMany() {
+        String numbers = "1,2,3,4,5,6,7,8,9,10,11";
+        assertEquals(Calculator.add(numbers), 66);
+    }
+    
 }
