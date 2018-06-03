@@ -148,4 +148,10 @@ public class CalculatorTest {
         String numbers = "//[\n1[2[7";
         assertEquals(Calculator.add(numbers), 10);
     }
+    
+    @Test
+    public void testAddCustomDelimSquares() {
+        String numbers = "//[]\n1[]2[]7";
+        assertEquals(Calculator.add(numbers), 10);
+    }
 }
