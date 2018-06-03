@@ -100,4 +100,22 @@ public class CalculatorTest {
             assertTrue(nfe.getMessage().contains("-4") && nfe.getMessage().contains("-7") && nfe.getMessage().contains("-2"));
         }
     }
+    
+    @Test
+    public void testAddIgnoreOver1000() {
+        String numbers = "1,2,1020";
+        assertEquals(Calculator.add(numbers), 3);
+    }
+    
+    @Test
+    public void testAddIgnoreMultipleOver1000() {
+        String numbers = "1,2,1020,2000,4,1001";
+        assertEquals(Calculator.add(numbers), 7);
+    }
+    
+    @Test
+    public void testAdd1000() {
+        String numbers = "1,2,1000";
+        assertEquals(Calculator.add(numbers), 1003);
+    }
 }
