@@ -1,5 +1,6 @@
 package tdd.kata.calc;
 
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 /**
@@ -8,7 +9,7 @@ import java.util.StringTokenizer;
  */
 public class Calculator {
 
-    protected static int add(String numbers){
+    protected static int add(String numbers) throws NumberFormatException{
         //Check if the string is empty and return 0 if it is.
         if(numbers.trim().length() == 0){
             return 0;
@@ -27,10 +28,16 @@ public class Calculator {
         }
         StringTokenizer st = new StringTokenizer(numbers, delim);
         int total = 0;
+        String negatives = "";
         try{
             //Add all the numbers found by the tokenizer together
             while(st.hasMoreTokens()){
-                total += Integer.parseInt(st.nextToken());
+                String stNumber = st.nextToken();
+                int number = Integer.parseInt(stNumber);
+                if(number < 0){
+                    negatives += stNumber +" ";
+                }
+                total += number;
             }
         //Make sure the string is actually a number and return -1 if there are invalid characters. 
         //I know invalid input checking isn't necessary, I just couldn't leave it out.
@@ -38,6 +45,10 @@ public class Calculator {
             nfe.printStackTrace();
             return -1;
         }
+        if(negatives.length() > 0){
+            throw new NumberFormatException("Negatives not allowed: "+negatives);
+        }
+        
         //Return added numbers
         return total;
     }

@@ -97,9 +97,7 @@ public class CalculatorTest {
         try{
             Calculator.add(numbers);
         }catch(NumberFormatException nfe){
-            assertTrue(nfe.getMessage().contains("-4"));
-            assertTrue(nfe.getMessage().contains("-7"));
-            assertTrue(nfe.getMessage().contains("-2"));
+            assertTrue(nfe.getMessage().contains("-4") && nfe.getMessage().contains("-7") && nfe.getMessage().contains("-2"));
         }
     }
 }
