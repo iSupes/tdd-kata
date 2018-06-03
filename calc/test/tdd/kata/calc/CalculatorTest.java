@@ -62,5 +62,16 @@ public class CalculatorTest {
         String numbers = "1,2,3,4,5,6,7,8,9,10,11";
         assertEquals(Calculator.add(numbers), 66);
     }
+        
+    @Test
+    public void testAddNewLineDelim() {
+        String numbers = "1,2\n5,3";
+        assertEquals(Calculator.add(numbers), 11);
+    }
     
+    @Test
+    public void testAddNewLineDelims() {
+        String numbers = "1,2\n5,3\n7";
+        assertEquals(Calculator.add(numbers), 18);
+    }
 }
