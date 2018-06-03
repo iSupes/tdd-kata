@@ -38,7 +38,10 @@ public class Calculator {
                 if(number < 0){
                     negatives += stNumber +" ";
                 }
-                total += number;
+                //Added check for numbers over 1000 to be ignored
+                if(number <= 1000){
+                    total += number;
+                }
             }
         //Make sure the string is actually a number and return -1 if there are invalid characters. 
         //I know invalid input checking isn't necessary, I just couldn't leave it out.
