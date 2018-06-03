@@ -84,12 +84,22 @@ public class CalculatorTest {
     @Test
     public void testAdd1Negative() {
         String numbers = "1,2,-4";
-        assertEquals(Calculator.add(numbers), -1);
+        try{
+            Calculator.add(numbers);
+        }catch(NumberFormatException nfe){
+            assertTrue(nfe.getMessage().contains("-4"));
+        }
     }
     
     @Test
     public void testAddManyNegative() {
         String numbers = "1,2,-4,5,-7,-2";
-        assertEquals(Calculator.add(numbers), -1);
+        try{
+            Calculator.add(numbers);
+        }catch(NumberFormatException nfe){
+            assertTrue(nfe.getMessage().contains("-4"));
+            assertTrue(nfe.getMessage().contains("-7"));
+            assertTrue(nfe.getMessage().contains("-2"));
+        }
     }
 }
