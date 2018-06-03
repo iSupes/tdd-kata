@@ -133,13 +133,13 @@ public class CalculatorTest {
     
     @Test
     public void testAdd2CustomDelim() {
-        String numbers = "//[*][%]\\n1*2%3";
+        String numbers = "//[*][%]\n1*2%3";
         assertEquals(Calculator.add(numbers), 6);
     }  
     
     @Test
     public void testAddMultipleCustomDelim() {
-        String numbers = "//[*][%][Q]\\n1*2%3*10Q11Q5%1009";
+        String numbers = "//[*][%][Q]\n1*2%3*10Q11Q5%1009";
         assertEquals(Calculator.add(numbers), 32);
     }  
     
