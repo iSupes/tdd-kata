@@ -34,6 +34,7 @@ public class Calculator {
             while(st.hasMoreTokens()){
                 String stNumber = st.nextToken();
                 int number = Integer.parseInt(stNumber);
+                //Checks if there were any negatives passed and stores them away if so
                 if(number < 0){
                     negatives += stNumber +" ";
                 }
@@ -45,6 +46,7 @@ public class Calculator {
             nfe.printStackTrace();
             return -1;
         }
+        //If any negatives were found, throws and exception including the negatives found
         if(negatives.length() > 0){
             throw new NumberFormatException("Negatives not allowed: "+negatives);
         }
