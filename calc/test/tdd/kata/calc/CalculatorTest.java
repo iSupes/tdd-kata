@@ -118,4 +118,16 @@ public class CalculatorTest {
         String numbers = "1,2,1000";
         assertEquals(Calculator.add(numbers), 1003);
     }
+    
+    @Test
+    public void testAddLongCustomDelim() {
+        String numbers = "//***\n1***2***7";
+        assertEquals(Calculator.add(numbers), 10);
+    }    
+    
+    @Test
+    public void testAddLongerCustomDelim() {
+        String numbers = "//longerDelim\n1longerDelim2longerDelim7";
+        assertEquals(Calculator.add(numbers), 10);
+    }  
 }
