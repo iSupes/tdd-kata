@@ -18,9 +18,11 @@ public class Calculator {
         String delim = ",";
         
         //Checks if a custom delimiter has been specified and uses it if it has
+        //Added additional code to allow variable length delimiters
         if(numbers.length() > 3 && numbers.substring(0,2).equals("//")){
-            delim = numbers.charAt(2)+"";
-            numbers = numbers.substring(4);            
+            int newLine = numbers.indexOf("\n");
+            delim = numbers.substring(2,newLine);
+            numbers = numbers.substring(newLine+1);            
         } else {
             //If no custom delimiter has been specified, continues to allow '\n' as well as ','
             //Replaces new line characters with delimiters to allow '\n' to be used as a delimiter.
