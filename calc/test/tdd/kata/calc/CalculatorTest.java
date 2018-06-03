@@ -34,6 +34,27 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testAdd() {
+    public void testAdd0() {
+        String numbers = "";
+        assertEquals(Calculator.add(numbers), 0);
     }
+    
+    @Test
+    public void testAddSpaces() {
+        String numbers = "   ";
+        assertEquals(Calculator.add(numbers), 0);
+    }
+    
+    @Test
+    public void testAdd1() {
+        String numbers = "1";
+        assertEquals(Calculator.add(numbers), 1);
+    }
+    
+    @Test
+    public void testAdd2() {
+        String numbers = "1,2";
+        assertEquals(Calculator.add(numbers), 3);
+    }
+    
 }
